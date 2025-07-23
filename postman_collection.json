@@ -1,0 +1,359 @@
+{
+	"info": {
+		"_postman_id": "6ebbbebe-baf7-486e-b5a7-42c9f3950878",
+		"name": "TalentoTech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23816786"
+	},
+	"item": [
+		{
+			"name": "local",
+			"item": [
+				{
+					"name": "auth/login",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "lalala",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "ejemplo@ejemplo.com.ar",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"correo\": \"ejemplo@ejemplo.com.ar\",\n    \"contraseña\": \"lalala\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "correo",
+									"value": "ejemplo@ejemplo.com.ar",
+									"disabled": true
+								},
+								{
+									"key": "contraseña",
+									"value": "lalala",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All_products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product_id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/products/ayvL2VNcvZBtuXu25OK4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"ayvL2VNcvZBtuXu25OK4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New_product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InAzYXRSeTF3S1VNUG45Y0ltNnd6IiwiY29ycmVvIjoiZWplbXBsb0BlamVtcGxvLmNvbS5hciIsImlhdCI6MTc1MzIxNDY4MywiZXhwIjoxNzUzMjE4MjgzfQ.eGOO31_fYvxfB2KLF9g0e6ixPl5hYEm6wgLSmhyR4Lg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Bearer",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InAzYXRSeTF3S1VNUG45Y0ltNnd6IiwiY29ycmVvIjoiZWplbXBsb0BlamVtcGxvLmNvbS5hciIsImlhdCI6MTc1MzIxNDIwMSwiZXhwIjoxNzUzMjE3ODAxfQ.0-WH6lS9i4TREH4gbDSrf-il89e6y2dFLL7dbNR9F5Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"nombre\": \"Otro producto\",\n    \"precio\": 200,\n    \"descripcion\": \"Producto creado desde Postman\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InAzYXRSeTF3S1VNUG45Y0ltNnd6IiwiY29ycmVvIjoiZWplbXBsb0BlamVtcGxvLmNvbS5hciIsImlhdCI6MTc1MzIxNDIwMSwiZXhwIjoxNzUzMjE3ODAxfQ.0-WH6lS9i4TREH4gbDSrf-il89e6y2dFLL7dbNR9F5Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products/0vKZ0Ri2nRjGVQ15PFRU",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"0vKZ0Ri2nRjGVQ15PFRU"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "produccion",
+			"item": [
+				{
+					"name": "auth/login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"correo\": \"ejemplo@ejemplo.com.ar\",\n    \"contraseña\": \"lalala\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "entrega-final-node-js-talento-tech.vercel.app/auth/login",
+							"host": [
+								"entrega-final-node-js-talento-tech",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All_products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "entrega-final-node-js-talento-tech.vercel.app/api/products",
+							"host": [
+								"entrega-final-node-js-talento-tech",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product_id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "entrega-final-node-js-talento-tech.vercel.app/api/products/ayvL2VNcvZBtuXu25OK4",
+							"host": [
+								"entrega-final-node-js-talento-tech",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"products",
+								"ayvL2VNcvZBtuXu25OK4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New_product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InAzYXRSeTF3S1VNUG45Y0ltNnd6IiwiY29ycmVvIjoiZWplbXBsb0BlamVtcGxvLmNvbS5hciIsImlhdCI6MTc1MzIxNzIyNiwiZXhwIjoxNzUzMjIwODI2fQ.3eYumUK1gztSmpBOwhj08WcncPyTI777QCjOAwytXvk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"nombre\": \"Otro producto\",\n    \"precio\": 200,\n    \"descripcion\": \"Producto creado desde Postman\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "entrega-final-node-js-talento-tech.vercel.app/api/products/create",
+							"host": [
+								"entrega-final-node-js-talento-tech",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"products",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InAzYXRSeTF3S1VNUG45Y0ltNnd6IiwiY29ycmVvIjoiZWplbXBsb0BlamVtcGxvLmNvbS5hciIsImlhdCI6MTc1MzIxNzIyNiwiZXhwIjoxNzUzMjIwODI2fQ.3eYumUK1gztSmpBOwhj08WcncPyTI777QCjOAwytXvk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "entrega-final-node-js-talento-tech.vercel.app/api/products/LG9c6mQ7GvqBZvoc5lHm",
+							"host": [
+								"entrega-final-node-js-talento-tech",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"products",
+								"LG9c6mQ7GvqBZvoc5lHm"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,11 +1,38 @@
 # Entrega Final Node.js + Express
 
-## Requisitos
-- Node.js >= 14
-- npm
-- Cuenta en [Firebase](https://firebase.google.com/)
+## Despliegue
 
-## Instalación
+El proyecto está desplegado en producción: https://entrega-final-node-js-talento-tech.vercel.app
+
+## Endpoints disponibles
+
+### Autenticación
+
+`POST https://entrega-final-node-js-talento-tech.vercel.app/auth/login` — Recibe `{ correo, contraseña }` y devuelve un token JWT si las credenciales son válidas.
+
+Ejemplo:
+
+```json
+{
+  "correo": "ejemplo@ejemplo.com.ar",
+  "contraseña": "lalala"
+}
+```
+
+### Productos
+
+`GET https://entrega-final-node-js-talento-tech.vercel.app/api/products` — Devuelve todos los productos.
+`GET https://entrega-final-node-js-talento-tech.vercel.app/api/products/:id` — Devuelve un producto por ID.
+`POST https://entrega-final-node-js-talento-tech.vercel.app/api/products/create` — Crea un producto (requiere autenticación JWT).
+`DELETE https://entrega-final-node-js-talento-tech.vercel.app/api/products/:id` — Elimina un producto por ID (requiere autenticación JWT).
+
+## Colección Postman
+
+Puedes importar una colección de Postman para probar todos los endpoints de forma rápida:
+
+En Postman, haz clic en "Import" y selecciona `postman_collection.json`.
+
+## Instalación local
 
 1. Clona el repositorio o descarga el código fuente.
 2. Instala las dependencias:
@@ -19,7 +46,13 @@
 2. Crea un nuevo proyecto.
 3. Ve a Firestore Database y crea una base de datos en modo producción o prueba.
 4. Crea una colección llamada `productos` y agrega un documento de ejemplo con los campos que desees (por ejemplo: `nombre`, `precio`, `descripcion`).
-5. Crea una colección llamada `usuarios` y agrega un usuario con los campos `correo` y `contraseña` (puedes agregar más campos si lo deseas).
+5. Crea una colección llamada `usuarios` y agrega un usuario con los campos `correo` y `contraseña` (puedes agregar más campos si lo deseas). Ejemplo:
+   ```json
+   {
+     "correo": "ejemplo@ejemplo.com.ar",
+     "contraseña": "lalala"
+   }
+   ```
 6. Ve a la configuración del proyecto y copia las credenciales web de Firebase.
 
 ## Configuración del archivo `.env`
@@ -46,19 +79,3 @@ npm run start
 ```
 
 El servidor estará disponible en `http://localhost:3000` (o el puerto que definas en `.env`).
-
-## Endpoints disponibles
-
-### Autenticación
-- `POST /auth/login` — Recibe `{ correo, contraseña }` y devuelve un token JWT si las credenciales son válidas.
-
-### Productos
-- `GET /api/products` — Devuelve todos los productos.
-- `GET /api/products/:id` — Devuelve un producto por ID.
-- `POST /api/products/create` — Crea un producto (requiere autenticación JWT).
-- `DELETE /api/products/:id` — Elimina un producto por ID (requiere autenticación JWT).
-
-## Notas
-- Todas las variables, funciones y archivos están en español, excepto los endpoints y comandos requeridos.
-- Recuerda proteger tu secreto JWT y tus credenciales de Firebase.
-- Si tienes dudas, revisa el código fuente o consulta con tu docente. 
