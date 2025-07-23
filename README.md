@@ -8,6 +8,8 @@ El proyecto está desplegado en producción: https://entrega-final-node-js-talen
 
 ### Autenticación
 
+- `POST http://localhost:3000/auth/login` — Recibe `{ correo, contraseña }` y devuelve un token JWT si las credenciales son válidas (local).
+
 `POST https://entrega-final-node-js-talento-tech.vercel.app/auth/login` — Recibe `{ correo, contraseña }` y devuelve un token JWT si las credenciales son válidas.
 
 Ejemplo:
